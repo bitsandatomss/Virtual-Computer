@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virtual-computer"
+version = "0.1.0"
+description = "Unified executable surrogate of computation: compiler + OS kernel + microarchitecture"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pydantic>=2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["virtual_computer*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

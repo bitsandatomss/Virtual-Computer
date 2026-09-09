@@ -1,0 +1,24 @@
+# AI-native GCC plugin policy file.
+#
+# Grammar (one rule per line; '#' starts a comment):
+#
+#   disable_pass=<pass>
+#   disable_pass=<pass> if <feature><op><value>[&&<feature><op><value>]...
+#
+# <feature>  : basic_blocks | gimple_statements | phi_nodes | calls |
+#              branches | edges | memory_reads | memory_writes | float_ops
+# <op>       : <=  >=  ==  !=  <  >
+# <value>    : integer
+#
+# Unconditional rules disable a pass for every function in the translation
+# unit. Conditional rules are evaluated against per-function IR features
+# captured after SSA construction, so they only affect passes that run
+# later for that function. Malformed lines abort compilation with a
+# diagnostic instead of being silently ignored. Passes are never
+# force-enabled because their compiler prerequisites may not hold.
+#
+# Examples:
+#
+# disable_pass=evrp
+# disable_pass=ccp if gimple_statements<50&&basic_blocks<10
+# disable_pass=cddce if memory_writes>=8

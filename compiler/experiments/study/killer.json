@@ -1,0 +1,794 @@
+{
+  "schema": "virtual-compiler.benchmark.v1",
+  "objective": "runtime",
+  "budget_per_program": 6,
+  "elapsed_s": 783.5508820999967,
+  "worst_case_gain": {
+    "stock": -0.22863647907787912,
+    "random": 0.0,
+    "surrogate": 0.0,
+    "beam": 0.008097691878072535,
+    "mcts": 0.0,
+    "swarm": 0.0
+  },
+  "programs": [
+    {
+      "program": "conv@s0",
+      "winner": "beam",
+      "verification": {
+        "status": "same-config"
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 184.68189999111928,
+          "baseline_ms": 167.88709998945706,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.10003627439342809,
+          "gain_per_oracle": -0.10003627439342809,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "random:tune=+finline-functions",
+          "best_runtime_ms": 172.7299999911338,
+          "baseline_ms": 181.17580001126043,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.04661660122158535,
+          "gain_per_oracle": 0.023308300610792674,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 183.2163000071887,
+          "baseline_ms": 185.19020000530872,
+          "oracle_calls": 1,
+          "virtual_calls": 28,
+          "gain": 0.01065877135001446,
+          "gain_per_oracle": 0.01065877135001446,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 168.70229999767616,
+          "baseline_ms": 186.73720001243055,
+          "oracle_calls": 2,
+          "virtual_calls": 28,
+          "gain": 0.09657904270575897,
+          "gain_per_oracle": 0.048289521352879484,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "root",
+          "best_runtime_ms": 177.18519999471027,
+          "baseline_ms": 177.18519999471027,
+          "oracle_calls": 2,
+          "virtual_calls": 85,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "screen:flags=O2#2",
+          "best_runtime_ms": 164.40499998861924,
+          "baseline_ms": 178.88369999127463,
+          "oracle_calls": 5,
+          "virtual_calls": 56,
+          "gain": 0.0809391800558777,
+          "gain_per_oracle": 0.01618783601117554,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "conv@s1",
+      "winner": "mcts",
+      "verification": {
+        "status": "verified",
+        "equivalent": true,
+        "paired_gain": 0.028311558912609534,
+        "ci_low": -5.760000000009313,
+        "ci_high": 16.246099999989383,
+        "verdict": "within-noise",
+        "builds": 2
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 160.76310000789817,
+          "baseline_ms": 180.5709000036586,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": 0.1096954160130957,
+          "gain_per_oracle": 0.1096954160130957,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "random:tune=+finline-small-functions",
+          "best_runtime_ms": 179.12339999747928,
+          "baseline_ms": 179.38770000182558,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": 0.001473345186674485,
+          "gain_per_oracle": 0.001473345186674485,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2",
+            "-finline-small-functions"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 167.71629999857396,
+          "baseline_ms": 190.14530000276864,
+          "oracle_calls": 1,
+          "virtual_calls": 28,
+          "gain": 0.11795716225364548,
+          "gain_per_oracle": 0.11795716225364548,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:tune=+finline-functions",
+          "best_runtime_ms": 167.16050000104588,
+          "baseline_ms": 178.2387999992352,
+          "oracle_calls": 2,
+          "virtual_calls": 28,
+          "gain": 0.06215425596579902,
+          "gain_per_oracle": 0.03107712798289951,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "mcts:tune=+ftree-vectorize",
+          "best_runtime_ms": 154.14850000524893,
+          "baseline_ms": 183.69479999819305,
+          "oracle_calls": 2,
+          "virtual_calls": 90,
+          "gain": 0.1608445094430259,
+          "gain_per_oracle": 0.08042225472151295,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-ftree-vectorize"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "screen:tune=+finline-functions#2",
+          "best_runtime_ms": 156.749600006151,
+          "baseline_ms": 178.28670000017155,
+          "oracle_calls": 5,
+          "virtual_calls": 56,
+          "gain": 0.12080037374633,
+          "gain_per_oracle": 0.024160074749266,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "matmul@s0",
+      "winner": "random",
+      "verification": {
+        "status": "verified",
+        "equivalent": true,
+        "paired_gain": 0.38313599047391816,
+        "ci_low": 560.2773999999044,
+        "ci_high": 1871.7824000050314,
+        "verdict": "improves",
+        "builds": 2
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 3188.5209000029135,
+          "baseline_ms": 2595.170300002792,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.22863647907787912,
+          "gain_per_oracle": -0.22863647907787912,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "random:flags=O3",
+          "best_runtime_ms": 1080.7763000047999,
+          "baseline_ms": 3266.864799996256,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.669170178084493,
+          "gain_per_oracle": 0.3345850890422465,
+          "verdict": "improves",
+          "flags": [
+            "-O3"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "root",
+          "best_runtime_ms": 2125.9340999968117,
+          "baseline_ms": 2125.9340999968117,
+          "oracle_calls": 1,
+          "virtual_calls": 28,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 2146.429899992654,
+          "baseline_ms": 2982.0629000023473,
+          "oracle_calls": 2,
+          "virtual_calls": 28,
+          "gain": 0.28021977672202536,
+          "gain_per_oracle": 0.14010988836101268,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "root",
+          "best_runtime_ms": 1508.4036999905948,
+          "baseline_ms": 1508.4036999905948,
+          "oracle_calls": 2,
+          "virtual_calls": 85,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 1615.3614000068046,
+          "baseline_ms": 1740.3088999999454,
+          "oracle_calls": 5,
+          "virtual_calls": 56,
+          "gain": 0.07179616216014567,
+          "gain_per_oracle": 0.014359232432029134,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "matmul@s1",
+      "winner": "stock",
+      "verification": {},
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 1639.6877000079257,
+          "baseline_ms": 3065.703400003258,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": 0.4651512276085863,
+          "gain_per_oracle": 0.4651512276085863,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "root",
+          "best_runtime_ms": 1640.3531000105431,
+          "baseline_ms": 1640.3531000105431,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "root",
+          "best_runtime_ms": 1865.8772000053432,
+          "baseline_ms": 1865.8772000053432,
+          "oracle_calls": 1,
+          "virtual_calls": 28,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:tune=+finline-functions",
+          "best_runtime_ms": 2789.483400003519,
+          "baseline_ms": 2873.5745000012685,
+          "oracle_calls": 2,
+          "virtual_calls": 28,
+          "gain": 0.02926358791035779,
+          "gain_per_oracle": 0.014631793955178895,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "mcts:tune=+fpeel-loops",
+          "best_runtime_ms": 1748.9483000099426,
+          "baseline_ms": 2284.8524000000907,
+          "oracle_calls": 2,
+          "virtual_calls": 90,
+          "gain": 0.23454648536164824,
+          "gain_per_oracle": 0.11727324268082412,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-fpeel-loops"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "root",
+          "best_runtime_ms": 1583.4954000019934,
+          "baseline_ms": 1583.4954000019934,
+          "oracle_calls": 5,
+          "virtual_calls": 56,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "nbody@s0",
+      "winner": "beam",
+      "verification": {
+        "status": "same-config"
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 697.7712000079919,
+          "baseline_ms": 613.9421999978367,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.13654216962191315,
+          "gain_per_oracle": -0.13654216962191315,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "root",
+          "best_runtime_ms": 660.8884999877773,
+          "baseline_ms": 660.8884999877773,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 599.7503999969922,
+          "baseline_ms": 630.5947000073502,
+          "oracle_calls": 1,
+          "virtual_calls": 29,
+          "gain": 0.048913034013762666,
+          "gain_per_oracle": 0.048913034013762666,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 598.0457999976352,
+          "baseline_ms": 740.6658999971114,
+          "oracle_calls": 2,
+          "virtual_calls": 29,
+          "gain": 0.1925565899551099,
+          "gain_per_oracle": 0.09627829497755495,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "mcts:tune=-fpeel-loops",
+          "best_runtime_ms": 626.7816000035964,
+          "baseline_ms": 640.3499000007287,
+          "oracle_calls": 2,
+          "virtual_calls": 89,
+          "gain": 0.02118888438511013,
+          "gain_per_oracle": 0.010594442192555065,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-fno-peel-loops"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "screen:flags=O2#2",
+          "best_runtime_ms": 623.1949999928474,
+          "baseline_ms": 699.7300999937579,
+          "oracle_calls": 5,
+          "virtual_calls": 58,
+          "gain": 0.10937803018848725,
+          "gain_per_oracle": 0.02187560603769745,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "nbody@s1",
+      "winner": "mcts",
+      "verification": {
+        "status": "verified",
+        "equivalent": true,
+        "paired_gain": -0.019661665822688475,
+        "ci_low": -17.108400003053248,
+        "ci_high": 31.68410001671873,
+        "verdict": "within-noise",
+        "builds": 2
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 694.4636999978684,
+          "baseline_ms": 670.051200009766,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.03643378295232744,
+          "gain_per_oracle": -0.03643378295232744,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "root",
+          "best_runtime_ms": 645.4286999942269,
+          "baseline_ms": 645.4286999942269,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "root",
+          "best_runtime_ms": 639.331400001538,
+          "baseline_ms": 639.331400001538,
+          "oracle_calls": 1,
+          "virtual_calls": 29,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:tune=+finline-functions",
+          "best_runtime_ms": 668.1815000047209,
+          "baseline_ms": 673.6364000098547,
+          "oracle_calls": 2,
+          "virtual_calls": 29,
+          "gain": 0.008097691878072535,
+          "gain_per_oracle": 0.004048845939036268,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "mcts:tune=+ftree-vectorize",
+          "best_runtime_ms": 618.0693999922369,
+          "baseline_ms": 662.6269999978831,
+          "oracle_calls": 2,
+          "virtual_calls": 96,
+          "gain": 0.06724386420382596,
+          "gain_per_oracle": 0.03362193210191298,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-ftree-vectorize"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "root",
+          "best_runtime_ms": 633.0786000035005,
+          "baseline_ms": 633.0786000035005,
+          "oracle_calls": 5,
+          "virtual_calls": 58,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "sort@s0",
+      "winner": "beam",
+      "verification": {
+        "status": "same-config"
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 98.63170000608079,
+          "baseline_ms": 87.14879999752156,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.1317619979722703,
+          "gain_per_oracle": -0.1317619979722703,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "random:flags=O3",
+          "best_runtime_ms": 92.6197999942815,
+          "baseline_ms": 93.47959999286104,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.009197728687812197,
+          "gain_per_oracle": 0.004598864343906098,
+          "verdict": "within-noise",
+          "flags": [
+            "-O3"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "root",
+          "best_runtime_ms": 84.9671999894781,
+          "baseline_ms": 84.9671999894781,
+          "oracle_calls": 1,
+          "virtual_calls": 30,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 85.68219999142457,
+          "baseline_ms": 92.59869999368675,
+          "oracle_calls": 2,
+          "virtual_calls": 30,
+          "gain": 0.07469327326122008,
+          "gain_per_oracle": 0.03734663663061004,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "mcts:tune=+fivopts",
+          "best_runtime_ms": 85.84690000861883,
+          "baseline_ms": 87.79560000402853,
+          "oracle_calls": 2,
+          "virtual_calls": 96,
+          "gain": 0.02219587308840398,
+          "gain_per_oracle": 0.01109793654420199,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-fivopts"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "root",
+          "best_runtime_ms": 84.96999999624677,
+          "baseline_ms": 84.96999999624677,
+          "oracle_calls": 5,
+          "virtual_calls": 60,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        }
+      ]
+    },
+    {
+      "program": "sort@s1",
+      "winner": "swarm",
+      "verification": {
+        "status": "verified",
+        "equivalent": true,
+        "paired_gain": 0.009080037352576242,
+        "ci_low": -2.2455000143963844,
+        "ci_high": 4.754000008688308,
+        "verdict": "within-noise",
+        "builds": 2
+      },
+      "arms": [
+        {
+          "arm": "stock",
+          "best_branch": "root",
+          "best_runtime_ms": 101.98120000131894,
+          "baseline_ms": 93.69390000938438,
+          "oracle_calls": 1,
+          "virtual_calls": 0,
+          "gain": -0.08845079552782523,
+          "gain_per_oracle": -0.08845079552782523,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "random",
+          "best_branch": "random:xform=expect",
+          "best_runtime_ms": 85.43230000941548,
+          "baseline_ms": 93.17580000788439,
+          "oracle_calls": 2,
+          "virtual_calls": 0,
+          "gain": 0.08310634303986296,
+          "gain_per_oracle": 0.04155317151993148,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "surrogate",
+          "best_branch": "root",
+          "best_runtime_ms": 107.9493999859551,
+          "baseline_ms": 107.9493999859551,
+          "oracle_calls": 1,
+          "virtual_calls": 30,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "beam",
+          "best_branch": "screen:flags=O2",
+          "best_runtime_ms": 101.14790000079665,
+          "baseline_ms": 103.48629999498371,
+          "oracle_calls": 2,
+          "virtual_calls": 30,
+          "gain": 0.02259622765815771,
+          "gain_per_oracle": 0.011298113829078854,
+          "verdict": "improves",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "mcts",
+          "best_branch": "root",
+          "best_runtime_ms": 90.12349999102298,
+          "baseline_ms": 90.12349999102298,
+          "oracle_calls": 2,
+          "virtual_calls": 95,
+          "gain": 0.0,
+          "gain_per_oracle": 0.0,
+          "verdict": "within-noise",
+          "flags": [
+            "-O2"
+          ]
+        },
+        {
+          "arm": "swarm",
+          "best_branch": "screen:tune=+finline-functions",
+          "best_runtime_ms": 84.62020001024939,
+          "baseline_ms": 95.58799999649636,
+          "oracle_calls": 5,
+          "virtual_calls": 60,
+          "gain": 0.11474034383655879,
+          "gain_per_oracle": 0.022948068767311758,
+          "verdict": "improves",
+          "flags": [
+            "-O2",
+            "-finline-functions"
+          ]
+        }
+      ]
+    }
+  ]
+}

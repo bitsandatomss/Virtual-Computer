@@ -1,0 +1,26 @@
+{
+  "mode": "audit",
+  "surrogate": {
+    "n": 3,
+    "pairwise_recovery": null,
+    "hallucination_rate": 0.0,
+    "n_confident": 3,
+    "calibration_error": 0.0,
+    "verdict": "trustworthy"
+  },
+  "ablation": {
+    "beam": {
+      "best_runtime_ms": 2275.821700008237,
+      "oracle_calls": 2,
+      "virtual_calls": 28
+    },
+    "mcts": {
+      "best_runtime_ms": 1962.7635999931954,
+      "oracle_calls": 2,
+      "virtual_calls": 85
+    },
+    "delta": 0.13755827181624483,
+    "verdict": "mcts-wins"
+  },
+  "oracle_used": 3
+}

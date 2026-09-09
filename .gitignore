@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+env/
+venv/
+.idea/
+.vscode/
+rm_docs.ps1
+
+# docs and write-up clutter
+context.txt
+ARCHITECTURE.md
+docs/
+reports/
+audits/
+artifacts/
+**/README.md
+!README.md
+*_README.md
