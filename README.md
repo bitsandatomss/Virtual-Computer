@@ -1,4 +1,4 @@
-# Virtual Computer — unified executable surrogate of computation
+# Virtual Computer — surrogate of computation
 
 Research-grade unification of the three builds from `context.txt`'s
 **Virtual Computer** rung (`Compiler + OS + microarchitecture + I/O`,
@@ -17,7 +17,7 @@ from observations. The surrogate proposes, the simulator constrains,
 reality (the exact oracle build/run) decides. Computation itself stays
 exact and discrete — the surrogate never owns architectural state.
 
-## Honest headline (measured, 2026-09-07, round 2)
+## Measure
 
 **Unified grade: L0-none**, blocked by `micro: L1 skill gate
 (skill +0.06 < 0.10)`. The factorial vertical slice passes all live
